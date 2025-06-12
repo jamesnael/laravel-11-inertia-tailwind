@@ -1,0 +1,47 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "php artisan ziggy:generate && mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "php artisan ziggy:generate && npm run production",
+        "production": "mix --production"
+    },
+    "devDependencies": {
+        "@inertiajs/inertia": "^0.10.0",
+        "@inertiajs/inertia-vue3": "^0.5.1",
+        "@inertiajs/progress": "^0.2.7",
+        "@tailwindcss/forms": "^0.2.1",
+        "@tailwindcss/typography": "^0.3.0",
+        "@vue/compiler-sfc": "^3.3.9",
+        "axios": "^0.21.4",
+        "laravel-mix": "^6.0.49",
+        "lodash": "^4.17.19",
+        "postcss": "^8.4.32",
+        "postcss-import": "^12.0.1",
+        "tailwindcss": "^2.2.19",
+        "vue": "^3.3.9",
+        "vue-loader": "^16.8.3"
+    },
+    "dependencies": {
+        "@tiptap/extension-color": "^2.1.16",
+        "@tiptap/extension-image": "^2.1.13",
+        "@tiptap/extension-link": "^2.1.13",
+        "@tiptap/extension-table": "^2.1.13",
+        "@tiptap/extension-table-cell": "^2.1.13",
+        "@tiptap/extension-table-header": "^2.1.13",
+        "@tiptap/extension-table-row": "^2.1.13",
+        "@tiptap/extension-text-align": "^2.1.13",
+        "@tiptap/extension-text-style": "^2.1.16",
+        "@tiptap/extension-underline": "^2.1.13",
+        "@tiptap/pm": "^2.1.13",
+        "@tiptap/starter-kit": "^2.1.13",
+        "@tiptap/vue-3": "^2.1.13",
+        "flatpickr": "^4.6.13",
+        "vue-draggable-next": "^2.2.1",
+        "vue-material-design-icons": "^5.2.0",
+        "vue-multiselect": "^3.0.0-beta.3"
+    }
+}

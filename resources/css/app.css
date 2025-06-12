@@ -1,0 +1,317 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: lightgray white;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: white;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: lightgray;
+    border-radius: 20px;
+    border: 1px solid white;
+}
+
+.ql-align-justify {
+    text-align: justify;
+}
+
+.ql-align-right {
+    text-align: right;
+}
+
+.ql-align-left {
+    text-align: left;
+}
+
+.ql-align-center {
+    text-align: center;
+}
+
+.multiselect__placeholder {
+    display: inline-block !important;
+    margin-bottom: 0px !important;
+    padding-top: 0px !important;
+}
+
+.multiselect.invalid .multiselect__tags {
+    border: 1px solid #f86c6b !important;
+}
+
+.multiselect__option--highlight {
+    background: rgba(59, 130, 246, 1) !important;
+}
+
+.multiselect__option--highlight:after {
+    background: rgba(59, 130, 246, 1) !important;
+}
+
+.multiselect__tags {
+    padding: 5px !important;
+    min-height: 10px;
+    border-color: #6b7280 !important;
+}
+
+.multiselect__placeholder {
+    margin-left: 10px;
+    margin-top: 2px;
+}
+
+.multiselect__tag {
+    background: #f0f0f0 !important;
+    border: 1px solid rgba(60, 60, 60, 0.26) !important;
+    color: black !important;
+    margin-bottom: 0px !important;
+    margin-right: 5px !important;
+}
+
+.multiselect__tag-icon:after {
+    color: rgba(60, 60, 60, 0.5) !important;
+}
+
+.multiselect__tag-icon:focus,
+.multiselect__tag-icon:hover {
+    background: #f0f0f0 !important;
+}
+
+.multiselect__tag-icon:focus:after,
+.multiselect__tag-icon:hover:after {
+    color: red !important;
+}
+
+.ck-content blockquote {
+    display: block;
+    margin-block-start: 1__qem;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+}
+
+.ck-content strong,
+.ck-content b {
+    font-weight: bold;
+}
+
+.ck-content i,
+.ck-content address {
+    font-style: italic;
+}
+
+/* heading elements */
+
+.ck-content h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67__qem;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: bold;
+}
+
+.ck-content h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83__qem;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: bold;
+}
+
+.ck-content h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1__qem;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: bold;
+}
+
+.ck-content h4 {
+    display: block;
+    margin-block-start: 1.33__qem;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: bold;
+}
+
+.ck-content h5 {
+    display: block;
+    font-size: 0.83em;
+    margin-block-start: 1.67__qem;
+    margin-block-end: 1.67em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: bold;
+}
+
+.ck-content h6 {
+    display: block;
+    font-size: 0.67em;
+    margin-block-start: 2.33__qem;
+    margin-block-end: 2.33em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: bold;
+}
+
+/* tables */
+
+.ck-content table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: gray;
+}
+
+.ck-content .table table td {
+    border: 1px solid #bfbfbf !important;
+}
+
+.ck-content thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.ck-content tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.ck-content tfoot {
+    display: table-footer-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+/* for tables without table section elements (can happen with XHTML or dynamically created tables) */
+.ck-content table > tr {
+    vertical-align: middle;
+}
+
+.ck-content col {
+    display: table-column;
+}
+
+.ck-content colgroup {
+    display: table-column-group;
+}
+
+.ck-content tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.ck-content td,
+.ck-content th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+.ck-content th {
+    font-weight: bold;
+}
+
+.ck-content caption {
+    display: table-caption;
+    text-align: center;
+}
+
+/* lists */
+
+.ck-content ul,
+.ck-content menu,
+.ck-content dir {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1__qem;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 40px;
+}
+
+.ck-content ol {
+    display: block;
+    list-style-type: decimal;
+    margin-block-start: 1__qem;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 40px;
+}
+
+.ck-content li {
+    display: list-item;
+    text-align: match-parent;
+}
+
+.ck-content ::marker {
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+    white-space: pre;
+    text-transform: none;
+}
+
+.ck-content ul ul,
+.ck-content ol ul {
+    list-style-type: circle;
+}
+
+.ck-content ol ol ul,
+.ck-content ol ul ul,
+.ck-content ul ol ul,
+.ck-content ul ul ul {
+    list-style-type: square;
+}
+
+.ck-content a:any-link {
+    color: blue;
+    text-decoration: underline;
+    cursor: auto;
+}
+
+.ck-content a:any-link:active {
+    color: red;
+}
+
+details > summary {
+    list-style: none;
+}
+
+details > summary::marker, /* Latest Chrome, Edge, Firefox */ 
+details > summary::-webkit-details-marker /* Safari */ {
+    display: none;
+}
+
+.ProseMirror .column-resize-handle {
+    position: absolute;
+    right: -2px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    z-index: 20;
+    background-color: #adf;
+    pointer-events: none;
+}
+
+.resize-cursor {
+    cursor: "col-resize";
+}
