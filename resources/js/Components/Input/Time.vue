@@ -18,7 +18,7 @@
 
 <script>
   import flatpickr from "flatpickr";
-  require("flatpickr/dist/themes/airbnb.css");
+  import("flatpickr/dist/themes/airbnb.css");
   import { Indonesian } from "flatpickr/dist/l10n/id.js"
 
   export default {

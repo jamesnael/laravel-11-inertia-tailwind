@@ -761,7 +761,7 @@ export default {
                             };
                         } else {
                             alert(
-                                `The allowed filetypes are jpg and png with max size of ${maxSize}MB!`
+                                `The allowed filetypes are jpg and png with max size of ${maxSize}MB!!`
                             );
                         }
                         return true;

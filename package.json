@@ -1,13 +1,10 @@
 {
     "private": true,
     "scripts": {
-        "dev": "npm run development",
-        "development": "mix",
-        "watch": "php artisan ziggy:generate && mix watch",
-        "watch-poll": "mix watch -- --watch-options-poll=1000",
-        "hot": "mix watch --hot",
-        "prod": "php artisan ziggy:generate && npm run production",
-        "production": "mix --production"
+        "dev": "vite",
+        "build": "vite build",
+        "watch": "php artisan ziggy:generate && vite",
+        "prod": "php artisan ziggy:generate && vite build"
     },
     "devDependencies": {
         "@inertiajs/inertia": "^0.10.0",
@@ -15,13 +12,15 @@
         "@inertiajs/progress": "^0.2.7",
         "@tailwindcss/forms": "^0.2.1",
         "@tailwindcss/typography": "^0.3.0",
+        "@vitejs/plugin-vue": "^6.0.0",
         "@vue/compiler-sfc": "^3.3.9",
         "axios": "^0.21.4",
-        "laravel-mix": "^6.0.49",
+        "laravel-vite-plugin": "^1.3.0",
         "lodash": "^4.17.19",
         "postcss": "^8.4.32",
         "postcss-import": "^12.0.1",
         "tailwindcss": "^2.2.19",
+        "vite": "^6.0.0",
         "vue": "^3.3.9",
         "vue-loader": "^16.8.3"
     },

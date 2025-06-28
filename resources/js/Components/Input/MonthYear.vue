@@ -13,8 +13,8 @@
 
 <script>
   import flatpickr from "flatpickr";
-  require("flatpickr/dist/themes/airbnb.css");
-  require("flatpickr/dist/plugins/monthSelect/style.css");
+  import("flatpickr/dist/themes/airbnb.css");
+  import("flatpickr/dist/plugins/monthSelect/style.css");
   import { Indonesian } from "flatpickr/dist/l10n/id.js"
   import monthSelectPlugin from "flatpickr/dist/plugins/monthSelect"
 
