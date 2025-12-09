@@ -1,9 +1,22 @@
 <?php
 
-use App\Models\MetaTag;
-use Illuminate\Foundation\Application;
+use App\Http\Controllers\Frontend\RencanaStrategisController;
+use App\Http\Controllers\Frontend\FaqController;
+use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\InformasiPublikController;
+use App\Http\Controllers\Frontend\KebijakanPrivasiController;
+use App\Http\Controllers\Frontend\KontakController;
+use App\Http\Controllers\Frontend\LayananController;
+use App\Http\Controllers\Frontend\ProdukHukumController;
+use App\Http\Controllers\Frontend\ProfilController;
+use App\Http\Controllers\Frontend\PublikasiController;
+use App\Http\Controllers\Frontend\SearchController;
+use App\Http\Controllers\Frontend\UnitKerjaController;
+use App\Models\Menu;
+use App\Models\SubMenu;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,24 +30,6 @@ use Illuminate\Support\Facades\Schema;
 */
 
 Route::group(['prefix' => '/'], function () {
-    Route::group(['as' => 'frontend.', 'namespace' => 'Frontend'], function () {
-        /*---------------------------------- Home ---------------------------------------*/
-        Route::group(['prefix' => 'home', 'as' => 'home.'], function () {
-            Route::get('/verify', 'HomeController@verify')->name('verify');
-        });
-        /*---------------------------------- Home ---------------------------------------*/
-
-        if (Schema::hasTable('tb_meta_tag')) {
-            $meta = MetaTag::get();
-
-            foreach($meta as $value){
-                if ($value['slug'] == 'homepage') {
-                    Route::group(['prefix' => '', 'as' => 'home.'], function () use($value) {
-                        Route::get('/'.$value['route_slug'], $value['controller_name'].'@index')->name('index');
-                    });
-                }
-            }
-        }
-
-    });
+  Route::group(['as' => 'frontend.', 'namespace' => 'Frontend'], function () {
+  });
 });

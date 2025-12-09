@@ -16,7 +16,7 @@ class HasAccess
      */
     public function handle(Request $request, Closure $next, $access)
     {
-        if (in_array($access, ($request->user()->jabatan->hak_akses?: []))) {
+        if (in_array($access, ($request->user()->role->hak_akses?: []))) {
             return $next($request);
         }
         abort(403);

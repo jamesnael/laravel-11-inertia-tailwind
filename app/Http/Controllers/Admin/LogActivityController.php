@@ -46,7 +46,7 @@ class LogActivityController extends Controller
      */
     public function detail($log_activity)
     {
-        $log_activity = LogActivity::with('causer.jabatan')->find($log_activity);
+        $log_activity = LogActivity::with('causer.role')->find($log_activity);
 
         $this->breadcrumbs[] = [
             'text' => 'Detail Log Activity',
@@ -71,7 +71,7 @@ class LogActivityController extends Controller
      */
     public function table(Request $request)
     {
-    	$query = LogActivity::with('causer.jabatan');
+    	$query = LogActivity::with('causer.role');
     	if ($request->input_date) {
 	        $query->whereDate('created_at', $request->input_date);
     	} else {
@@ -85,7 +85,7 @@ class LogActivityController extends Controller
                 $subquery->where('nama_lengkap', 'LIKE', '%' . $request->input('search') . '%');
     		});
 
-			$query->orWhereHas('causer.jabatan', function($subquery) use ($request){
+			$query->orWhereHas('causer.role', function($subquery) use ($request){
 	            $subquery->where('nama_jabatan', 'LIKE', '%' . $request->input('search') . '%');
 			});
     	}

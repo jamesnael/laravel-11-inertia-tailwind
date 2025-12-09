@@ -59,7 +59,7 @@ export function formatDate (date) {
     day = '' + d.getDate(),
     year = d.getFullYear();
 
-  if (day.length < 2) day = '0' + day;
+  // if (day.length < 2) day = '0' + day;
 
   return [day, month, year].join(' ');
 }

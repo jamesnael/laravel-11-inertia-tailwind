@@ -1,5 +1,5 @@
 <template>
-    <small>(Drag image if you wish to add images)</small>
+    <small>(Seret gambar ke sini untuk menambahkan)</small>
     <section
         v-if="editor"
         class="buttons flex items-center flex-wrap gap-x-4 border-l-2 border-t-2 border-r-2 border-gray-400 text-gray-700"
@@ -444,7 +444,7 @@
             <div class="flex flex-row gap-2">
                 <div class="flex-1 flex flex-col space-y-2">
                     <span class="text-black font-medium"
-                        >Number of Rows
+                        >Jumlah Baris
                         <span class="text-red-400">*</span></span
                     >
                     <input
@@ -456,7 +456,7 @@
                 </div>
                 <div class="flex-1 flex flex-col space-y-2">
                     <span class="text-black font-medium"
-                        >Number of Column
+                        >Jumlah Kolom
                         <span class="text-red-400">*</span></span
                     >
                     <input
@@ -474,7 +474,7 @@
                         class="py-3 px-6 text-center shadow-md rounded-md font-semibold text-white bg-gray-400 focus:outline-none focus:ring-4 focus:ring-gray-300 disabled:cursor-not-allowed"
                         @click.prevent="tablePrompt = false"
                     >
-                        Cancel
+                        Batal
                     </button>
                     <button
                         :disabled="
@@ -485,7 +485,7 @@
                         class="py-3 px-6 text-center shadow-md rounded-md font-semibold text-white bg-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-300 disabled:cursor-not-allowed"
                         @click.prevent="createTable()"
                     >
-                        Create Table
+                        Buat Tabel
                     </button>
                 </div>
             </div>
@@ -702,7 +702,7 @@ export default {
             content: this.modelValue,
             editorProps: {
                 attributes: {
-                    class: "min-h-[8rem] border-2 border-gray-400 outline-none prose max-w-none",
+                    class: "min-h-32 border-2 border-gray-400 outline-none prose max-w-none",
                 },
                 handleDrop: function (view, event, slice, moved) {
                     // check if any external files is dropped
@@ -761,7 +761,7 @@ export default {
                             };
                         } else {
                             alert(
-                                `The allowed filetypes are jpg and png with max size of ${maxSize}MB!!`
+                                `The allowed filetypes are jpg and png with max size of ${maxSize}MB!`
                             );
                         }
                         return true;

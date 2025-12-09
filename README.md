@@ -1,21 +1,18 @@
-# Installation
+### Installation
 
 1. Clone the repository
 
 2. Change to directory
-
 ````
-cd eria-webprofile
+cd project_name
 ````   
 
 3. Install dependencies
-
 ````
 composer install
 ````
 
 4. Copy .env file
-
 ```
 cp .env.example .env
 ```
@@ -23,7 +20,6 @@ cp .env.example .env
 5. Modify `DB_*` value in `.env` with your database config.
 
 6. Generate application key:
-
 ````
 php artisan key:generate
 ````
@@ -39,7 +35,6 @@ npm install
 ````
 
 9. Build
-
 ````
 npm run dev
 ````
@@ -51,7 +46,6 @@ npm run watch
 ### Database Data
 
 1. Generate the db seeder
-
 ````
 php artisan db:seed
 ````
@@ -59,9 +53,9 @@ php artisan db:seed
 3. Testing the data
 ```
 Login with :
-username : demo-admin
+username : admin_test
 password : password
 ```
 
 <br>
-<b>PT Total Solusi Teknologi</b>
+<b>James Nathanael</b>

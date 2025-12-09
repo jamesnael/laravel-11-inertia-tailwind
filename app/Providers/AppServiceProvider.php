@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -41,6 +42,8 @@ class AppServiceProvider extends ServiceProvider
                 ]
             );
         });
+
+        Paginator::useBootstrap();
 
         // \URL::forceScheme('https');
     }

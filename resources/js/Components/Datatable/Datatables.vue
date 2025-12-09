@@ -6,9 +6,6 @@
           {{ title }}
         </slot>
       </div>
-      <div v-if="caption">
-        <caption>{{ caption }}</caption>
-      </div>
     </div>
 
     <div class="flex-1">
@@ -44,6 +41,7 @@
 
     <div :class="{ 'flex-1 relative': true, 'hidden': grid === 'always', 'hidden md:block': grid === 'responsive', 'block': grid === 'never' }">
       <table :class="initClass(tableClass)" :style="tableStyle">
+        <caption v-if="caption">{{ caption }}</caption>
         <thead :class="initClass(theadClass)" :style="theadStyle">
           <tr>
             <th v-if="withSelect">
@@ -133,7 +131,7 @@
           <slot name="table.row.append" :items="items" />
         </tbody>
       </table>
-      <div v-if="isLoading && !disableLoader && (loaderType === 'dual' || loaderType === 'block')" class="absolute inset-0 bg-gray-300 bg-opacity-30 h-full flex flex-col justify-center">
+      <div v-if="isLoading && !disableLoader && (loaderType === 'dual' || loaderType === 'block')" class="absolute inset-0 bg-gray-300/30 h-full flex flex-col justify-center">
         <datatables-loader>
           <template v-slot:[`loader`]>
             <slot name="loader" />
@@ -213,7 +211,7 @@
           </div>
         </div>
       </div>
-      <div v-if="isLoading && !disableLoader && (loaderType === 'dual' || loaderType === 'block')" class="absolute inset-0 bg-gray-300 bg-opacity-30 h-full flex flex-col justify-center">
+      <div v-if="isLoading && !disableLoader && (loaderType === 'dual' || loaderType === 'block')" class="absolute inset-0 bg-gray-300/30 h-full flex flex-col justify-center">
         <datatables-loader>
           <template v-slot:[`loader`]>
             <slot name="loader" />
@@ -231,7 +229,7 @@
         <div class="flex flex-col md:flex-row content-center items-center space-x-0 md:space-x-4 space-y-2 md:space-y-0">
           <slot name="before.pagination-label" />
           <slot v-if="!disablePaginationLabel" name="label.pagination" :from="from" :to="to" :total="total">
-            <span class="whitespace-nowrap font-medium">Showing {{ from }}-{{ to }} from total {{ total }} records.</span>
+            <span class="whitespace-nowrap font-medium">Menampilkan {{ from }}-{{ to }} dari total {{ total }} data.</span>
           </slot>
           <slot name="after.pagination-label" />
         </div>

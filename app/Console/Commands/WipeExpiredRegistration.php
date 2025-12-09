@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Mail\UserRegistrationExpiredNotificationMail;
-use App\Models\Karyawan;
+use App\Models\User;
 use App\Models\ProductCompany;
 use Illuminate\Console\Command;
 use Carbon\Carbon;
@@ -44,7 +44,7 @@ class WipeExpiredRegistration extends Command
     {
         try {
             \DB::beginTransaction();
-            $data = Karyawan::where('approval_status', 'Waiting Verification')
+            $data = User::where('approval_status', 'Waiting Verification')
             ->where('status',false)
             ->where('created_at', '<=', Carbon::now()->subHour(3))
             ->get();

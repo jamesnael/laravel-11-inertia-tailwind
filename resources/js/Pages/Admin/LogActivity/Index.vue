@@ -80,7 +80,7 @@
   import SelectSearch from '@/Components/Select/SelectSearch.vue';
 
   export default {
-    name: 'KomisiSalesIndex',
+    name: 'LogActivityIndex',
     components: {
       Head,
           Link,
@@ -113,7 +113,7 @@
         },
         {
           uniqid: 'namaUser',
-          label: 'User Name',
+          label: 'Nama User',
           field: (row) => row.causer.nama_lengkap ?? '-',
           sortable: false,
           sortOrder: 'asc',
@@ -123,8 +123,8 @@
         },
         {
           uniqid: 'namaJabatan',
-          label: 'Group User',
-          field: (row) => row.causer.jabatan.nama_jabatan ?? '-',
+          label: 'Role',
+          field: (row) => row.causer.role.nama_jabatan ?? '-',
           sortable: false,
           sortOrder: 'asc',
           align: 'center',
@@ -133,7 +133,7 @@
         },
         {
           uniqid: 'aktivitas',
-          label: 'Activity',
+          label: 'Aktivitas',
           field: 'description',
           sortable: false,
           sortOrder: 'asc',
@@ -143,7 +143,7 @@
         },
         {
           uniqid: 'tanggal',
-          label: 'Date',
+          label: 'Tanggal dan Waktu',
           field: 'created_date',
           sortable: false,
           sortOrder: 'asc',
@@ -153,7 +153,7 @@
         },
         {
           uniqid: 'action',
-          label: 'Action',
+          label: 'Aksi',
           field: 'id',
           sortable: false,
           align: 'center',

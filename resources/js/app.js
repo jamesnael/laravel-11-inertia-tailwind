@@ -1,9 +1,12 @@
-import './bootstrap'
+import './bootstrap';
+import "../css/app.css";
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
 import { formatMoney, hasAccess, lang, formatDate } from './mixins';
 import Multiselect from 'vue-multiselect'
+import Toast from "vue-toastification";
+import "vue-toastification/dist/index.css";
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
@@ -29,6 +32,7 @@ createInertiaApp({
     setup({ el, app, props, plugin }) {
         return createApp({ render: () => h(app, props)})
             .use(plugin)
+            .use(Toast)
             .mixin(mixins)
             .mount(el);
     },

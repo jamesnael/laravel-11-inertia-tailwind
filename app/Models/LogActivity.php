@@ -43,7 +43,7 @@ class LogActivity extends Model
      */
     public function causer()
     {
-        return $this->belongsTo(Karyawan::class, 'causer_id', 'id');
+        return $this->belongsTo(User::class, 'causer_id', 'id');
     }
 
     /**

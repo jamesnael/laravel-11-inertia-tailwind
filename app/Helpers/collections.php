@@ -4,7 +4,22 @@ use Illuminate\Support\Facades\Route;
 
 if (! function_exists('prepare_main_menu')) {
     function prepare_main_menu() {
-        $reservedKeywords = ['.index', '.create', '.edit', '.show', '.detail','.view'];
+        $reservedKeywords = [
+          '.index',
+          '.create-sub',
+          '.create',
+          '.dokumen',
+          '.position-sub',
+          '.position',
+          '.meta-sub',
+          '.edit-sub',
+          '.sub-menu',
+          '.edit',
+          '.show',
+          '.detail',
+          '.view',
+          '.meta',
+        ];
         $main_menu = collect(config('main-menu.menu'));
         $currentRoute = str_replace_multiple($reservedKeywords, '', Route::currentRouteName());
         $main_menu->transform(function($menu) use ($currentRoute, $reservedKeywords) {
@@ -134,5 +149,61 @@ if (! function_exists('log_activity')) {
             ->by($causer ?: (Auth::user() ?? null))
             ->withProperties($properties)
             ->log($description);
+    }
+}
+
+if (!function_exists('formatRupiahRange')) {
+    function formatRupiahRange($min, $max)
+    {
+        return formatRupiahShort($min) . ' - ' . formatRupiahShort($max);
+    }
+}
+
+if (!function_exists('formatRupiahShort')) {
+    function formatRupiahShort($number)
+    {
+        if ($number >= 1_000_000_000_000) { // >= 1 Triliun
+            return floor($number / 1_000_000_000_000) . ' Triliun';
+        } elseif ($number >= 1_000_000_000) { // >= 1 Miliar
+            return floor($number / 1_000_000_000) . ' Miliar';
+        } elseif ($number >= 1_000_000) { // >= 1 Juta
+            return floor($number / 1_000_000) . ' Juta';
+        } elseif ($number >= 1_000) { // >= ribuan
+            return number_format($number, 0, ',', '.');
+        }
+
+        return $number;
+    }
+}
+
+if (!function_exists('encryptID')) {
+    function encryptID($id)
+    {
+        $encrypt_method = 'AES-256-CBC';
+        $secret_key = 'Some#Random_Key!';
+        $secret_iv = '!IV@_$2';
+
+        $key = hash('sha256', $secret_key);
+        $iv = substr(hash('sha256', $secret_iv), 0, 16);
+        
+        $data = openssl_encrypt($id, $encrypt_method, $key, 0, $iv);
+        $output = base64_encode($data);
+        return $output;
+    }
+}
+
+if (!function_exists('decryptID')) {
+    function decryptID($id)
+    {
+        $encrypt_method = 'AES-256-CBC';
+        $secret_key = 'Some#Random_Key!';
+        $secret_iv = '!IV@_$2';
+
+        $key = hash('sha256', $secret_key);
+        $iv = substr(hash('sha256', $secret_iv), 0, 16);
+
+        $data = base64_decode($id);
+        $output = openssl_decrypt($data, $encrypt_method, $key, 0, $iv);
+        return $output;
     }
 }

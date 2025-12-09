@@ -42,9 +42,10 @@ class HandleInertiaRequests extends Middleware
             'currentRoute' => Route::currentRouteName(),
             'flash' => [
                 'alertState' => fn () => $request->session()->get('alertState'),
-                'alertMessage' => fn () => $request->session()->get('alertMessage')
+                'alertMessage' => fn () => $request->session()->get('alertMessage'),
+                'importErrorMessage' => fn () => $request->session()->get('importErrorMessage') ?? []
             ],
-            'currentUser' => fn () => $request->user() ? $request->user()->load('jabatan') : null,
+            'currentUser' => fn () => $request->user() ? $request->user()->load('role') : null,
         ]);
     }
 }

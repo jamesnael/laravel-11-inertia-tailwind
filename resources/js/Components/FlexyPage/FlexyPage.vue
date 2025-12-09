@@ -110,7 +110,7 @@
                                         </div>
 
                                         <div class="flex-1 flex flex-col space-y-1 mr-5">
-                                            <span class="text-black font-medium">Description</span>
+                                            <span class="text-black font-medium">Deskripsi</span>
                                             <input type="text" :class="{ 'text-sm p-[4px] rounded-md focus:ring-1 ring-indigo-500 placeholder-gray-500 text-black disabled:cursor-not-allowed disabled:bg-gray-100': true, 'border-red-400': form.errors.description }" v-model="val.description" :disabled="form.processing">
                                             <span v-if="form.errors.description" class="text-red-400 italic">{{ form.errors.description }}</span>
                                         </div>
@@ -155,7 +155,7 @@
                                     </div>
                                 </div>  
                                 
-                                <div class="pt-[1rem] pb-[1rem]">
+                                <div class="pt-4 pb-4">
                                     <a style="cursor:pointer" class="py-3 px-6 mt-4 text-center shadow-md rounded-md font-semibold text-white bg-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-300 disabled:cursor-not-allowed" :disabled="form.processing" @click="addDetailParagraph(idx)">
                                         + Add Item
                                     </a>
@@ -302,7 +302,7 @@
                                     </div>
                                 </div>  
                                 
-                                <div class="pt-[1rem] pb-[1rem]">
+                                <div class="pt-4 pb-4">
                                     <a style="cursor:pointer" class="py-3 px-6 mt-4 text-center shadow-md rounded-md font-semibold text-white bg-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-300 disabled:cursor-not-allowed" :disabled="form.processing" @click="addDetail(idx)">
                                         + Add Item
                                     </a>
@@ -337,7 +337,7 @@
                                     </div>
                                 </div>  
                                 
-                                <div class="pt-[1rem] pb-[1rem]">
+                                <div class="pt-4 pb-4">
                                     <a style="cursor:pointer" class="py-3 px-6 mt-4 text-center shadow-md rounded-md font-semibold text-white bg-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-300 disabled:cursor-not-allowed" :disabled="form.processing" @click="addDetailFAQ(idx)">
                                         + Add Detail
                                     </a>

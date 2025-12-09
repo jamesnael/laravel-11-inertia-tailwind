@@ -27,7 +27,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'required',
                 'email',
                 'max:255',
-                Rule::unique('\App\Models\Karyawan', 'email')->ignore($user->id)
+                Rule::unique('\App\Models\User', 'email')->ignore($user->id)
             ],
             'nik' => 'required|numeric',
             'ektp' => [
@@ -59,7 +59,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
 
             if ($input['ektp']) {
                 $file_name = $user->slug . '-' . uniqid() . '.' . $input['ektp']->getClientOriginalExtension();
-                $path = Storage::disk('public')->putFileAs('karyawan/ektp', $input['ektp'], $file_name);
+                $path = Storage::disk('public')->putFileAs('user/ektp', $input['ektp'], $file_name);
                 $user->ektp_path = $path;
                 $user->save();
             }

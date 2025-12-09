@@ -3,7 +3,6 @@
         <input
             type="text"
             class="w-full pr-8 bg-transparent absolute pointer-events-none"
-            :placeholder="placeholder"
             :class="class"
             :style="style"
             :disabled="disabled"
@@ -11,6 +10,7 @@
         <input
             type="text"
             class="w-full pr-8"
+            :placeholder="placeholder"
             :value="modelValue"
             @input="$emit('update:modelValue', $event.target.value)"
             :class="class"
@@ -59,7 +59,7 @@
 
 <script>
 import flatpickr from "flatpickr";
-import("flatpickr/dist/themes/airbnb.css");
+import "flatpickr/dist/themes/airbnb.css";
 import { Indonesian } from "flatpickr/dist/l10n/id.js";
 
 export default {

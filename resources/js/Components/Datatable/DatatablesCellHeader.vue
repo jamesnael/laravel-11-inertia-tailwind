@@ -1,7 +1,7 @@
 <template>
   <th v-if="visible" :class="initClass(headerClass)" :style="headerStyle">
     <div :class="{ 'flex flex-row': true, 'justify-between items-center cursor-pointer': sortable, 'justify-center': !sortable }" @click.prevent="changeSortOrder()">
-      <div class="flex-grow">
+      <div class="grow">
         <slot :name="'table.cell.header.' + uniqid" :label="label">
           {{ label }}
         </slot>

@@ -5,7 +5,7 @@
 			  <thead>
 				<tr class="bg-gray-50">
 				  <th class="p-4">User Name</th>
-				  <th class="p-4">Group User</th>
+				  <th class="p-4">Role</th>
 				  <th class="p-4">Activity</th>
 				  <th class="p-4">Date</th>
 				</tr>
@@ -47,9 +47,9 @@
 			</div>
 
 			<div class="flex flex-row justify-end space-x-4 pt-5">
-				<a :href="route('admin.log-activity.index')" class="py-3 px-6 text-center shadow-md rounded-md font-semibold text-white bg-gray-400 focus:outline-none focus:ring-4 focus:ring-gray-300 disabled:cursor-not-allowed">
-					Back
-				</a>
+				<Link :href="route('admin.log-activity.index')" class="py-3 px-6 text-center shadow-md rounded-md font-semibold text-white bg-gray-400 focus:outline-none focus:ring-4 focus:ring-gray-300 disabled:cursor-not-allowed">
+					Kembali
+				</Link>
 			</div>
 		</div>
 	</form>
@@ -57,11 +57,13 @@
 
 <script>
 	import { onMounted } from 'vue';
-	import { useForm } from '@inertiajs/inertia-vue3';
+	import { useForm, Link } from '@inertiajs/inertia-vue3';
 
 	export default {
 		name: 'LogActivityForm',
-		components: {},
+		components: {
+			Link
+		},
 		props: {
 			httpMethod: {
 				type: String,
@@ -81,7 +83,7 @@
 		},
 		methods:{
 			showNotId(key) {
-				return (!_.includes(key, '_at') && key != 'id' && !_.includes(key, '_by') && key != 'slug');
+				return (!_.includes(key, '_at') && key != 'id' && !_.includes(key, '_by') && !_.includes(key, 'id_') && !_.includes(key, 'password') && key != 'slug');
 			},
 			changeFormatKey(key) {
 				return key.replace(/_/g, ' ');
@@ -101,7 +103,7 @@
 			onMounted(() => {
 				if (props.logActivity) {
 					form.nama_user = props.logActivity.causer.nama_lengkap;
-					form.nama_jabatan = props.logActivity.causer.jabatan.nama_jabatan;
+					form.nama_jabatan = props.logActivity.causer.role.nama_jabatan;
 					form.nama_regional = props.logActivity.causer.regional ? props.logActivity.causer.regional.nama_regional : '-';
 					form.aktivitas = props.logActivity.description;
 					form.properties = props.logActivity.properties[0];
